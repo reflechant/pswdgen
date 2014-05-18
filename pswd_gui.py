@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 A Tkinter-based GUI module for generating strong passwords.
 Works both under Python 2 and 3.
