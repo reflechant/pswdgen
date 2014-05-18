@@ -61,7 +61,7 @@ P = tk.Checkbutton(fr1, text = "Символы", variable = p)
 P.select()
 
 psvar = tk.StringVar()
-ps = tk.Label(root, textvariable=psvar, width = 15, font=("Helvetica", 18))
+ps = tk.Label(root, textvariable=psvar, font=("Helvetica", 18))
 psvar.set("   пароль   ")
 
 cpBtn = tk.Button(root, text = "Копировать в буфер обмена")
