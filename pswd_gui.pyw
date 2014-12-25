@@ -5,24 +5,21 @@ A Tkinter-based GUI module for generating strong passwords.
 Works both under Python 2 and 3.
 """
 
-from sys import version_info
-if version_info.major == 2:
+from sys import version
+if version.split()[0][0] == '2':
     import Tkinter as tk
-else:
+elif version.split()[0][0] == '3':
     import tkinter as tk
+else:
+    print "Невозможно определить установленную версию интерпретатора Python"
+    exit()
 import string
 import random
 
-pswd = ''
 
 def genpswd(event):
     """ generate password """
-    global pswd
-    global psvar
-    global l
-    global d
-    global p
-    #global number
+    
     chars = ""
     if l.get():
         chars = chars + string.ascii_letters
@@ -39,9 +36,8 @@ def genpswd(event):
 
 def copypswd(event):
     """ copy password to clipboard """
-    global pswd
     root.clipboard_clear()
-    root.clipboard_append(pswd)
+    root.clipboard_append(psvar.get())
 
 
 root = tk.Tk()
@@ -76,14 +72,6 @@ numLbl = tk.Label(fr2, text="символов")
 
 
 
-# L.grid(row = 1, sticky = "W")
-# P.grid(row = 2, sticky = "W")
-# D.grid(row = 3, sticky = "W")
-# number.grid(row = 4, sticky = "W")
-# numLbl.grid(row = 4, sticky = "E")
-# ps.grid(row = 5, sticky = "W")
-# genBtn.grid(row = 6, sticky = "WE")
-# cpBtn.grid(row = 7, sticky = "WE")
 fr1.pack(anchor="w")
 L.pack(side = "left")
 P.pack(side = "left")
