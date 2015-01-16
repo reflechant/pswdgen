@@ -13,6 +13,7 @@ elif version.split()[0][0] == '3':
 else:
     print "Невозможно определить установленную версию интерпретатора Python"
     exit()
+
 import string
 import random
 
@@ -23,10 +24,12 @@ def genpswd(event):
     chars = ""
     if l.get():
         chars = chars + string.ascii_letters
-    if d.get():
+    elif d.get():
         chars = chars + string.digits
-    if p.get():
+    elif p.get():
         chars = chars + string.punctuation
+    else:
+        return
     
     pswd = ''
     for x in range(0,int(number.get())):
