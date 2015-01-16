@@ -24,11 +24,11 @@ def genpswd(event):
     chars = ""
     if l.get():
         chars = chars + string.ascii_letters
-    elif d.get():
+    if d.get():
         chars = chars + string.digits
-    elif p.get():
+    if p.get():
         chars = chars + string.punctuation
-    else:
+    if not l.get() and not d.get() and not p.get():
         return
     
     pswd = ''
