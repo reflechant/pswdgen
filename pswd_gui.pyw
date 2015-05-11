@@ -11,7 +11,7 @@ if version.split()[0][0] == '2':
 elif version.split()[0][0] == '3':
     import tkinter as tk
 else:
-    print "Невозможно определить установленную версию интерпретатора Python"
+    print ("Невозможно определить установленную версию интерпретатора Python")
     exit()
 
 import string
